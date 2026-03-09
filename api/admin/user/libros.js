@@ -167,22 +167,5 @@ module.exports = async function handler(req, res) {
     } catch (e) { return res.status(500).json({ message: 'Error interno del servidor' }); }
   }
 
-  // GET /api/admin/user/estadisticas-user
-  if (url === 'estadisticas-user' && method === 'GET') {
-    try {
-      const usuario = await User.findById(req.user.id);
-      if (!usuario) return res.status(404).json({ error: true, mensaje: 'Usuario no encontrado' });
-
-      return res.status(200).json({
-        libros: usuario.libros?.length || 0,
-        series: usuario.series?.length || 0,
-        peliculas: usuario.peliculas?.length || 0,
-        pendientes: usuario.pendientes?.length || 0,
-      });
-    } catch (e) {
-      return res.status(500).json({ error: true, mensaje: 'Error al obtener estadísticas' });
-    }
-  }
-
   return res.status(404).json({ error: 'Ruta no encontrada' });
 };

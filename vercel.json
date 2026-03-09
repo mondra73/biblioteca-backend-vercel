@@ -31,6 +31,6 @@
 
     { "source": "/api/admin", "destination": "/api/admin/index" },
 
-    { "source": "/api/admin/user/estadisticas-user", "destination": "/api/admin/user/libros" }
+    { "source": "/api/admin/user/estadisticas-user", "destination": "/api/admin/user/estadisticas-user" }
   ]
 }
