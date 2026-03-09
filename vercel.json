@@ -29,6 +29,8 @@
     { "source": "/api/admin/user/pendiente", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/carga-pendientes", "destination": "/api/admin/user/pendientes" },
 
-    { "source": "/api/admin", "destination": "/api/admin/index" }
+    { "source": "/api/admin", "destination": "/api/admin/index" },
+
+    { "source": "/api/admin/user/estadisticas-user", "destination": "/api/admin/user/libros" }
   ]
 }
