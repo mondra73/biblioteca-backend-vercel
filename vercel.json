@@ -8,6 +8,8 @@
     { "source": "/api/admin/estadisticas-peliculas", "destination": "/api/admin/estadisticas" },
     { "source": "/api/admin/estadisticas-series", "destination": "/api/admin/estadisticas" },
     { "source": "/api/admin/movimiento", "destination": "/api/admin/movimiento" },
+    { "source": "/api/admin/user/estadisticas", "destination": "/api/admin/estadisticas" },
+    { "source": "/api/admin/user/estadisticas-user", "destination": "/api/admin/user/estadisticas-user" },
 
     { "source": "/api/admin/user/libros", "destination": "/api/admin/user/libros" },
     { "source": "/api/admin/user/libro/buscar", "destination": "/api/admin/user/libros" },
@@ -29,8 +31,6 @@
     { "source": "/api/admin/user/pendiente", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/carga-pendientes", "destination": "/api/admin/user/pendientes" },
 
-    { "source": "/api/admin", "destination": "/api/admin/index" },
-
-    { "source": "/api/admin/user/estadisticas-user", "destination": "/api/admin/user/estadisticas-user" }
+    { "source": "/api/admin", "destination": "/api/admin/index" }
   ]
 }
