@@ -72,7 +72,7 @@ module.exports = async function handler(req, res) {
     const accessToken = generateAccessToken(user);
     const refreshToken = generateRefreshToken(user, rememberMe);
 
-    res.setHeader('Set-Cookie', `refreshToken=${refreshToken}; HttpOnly; Secure; SameSite=Strict; Max-Age=${rememberMe ? 30 * 24 * 3600 : 24 * 3600}; Path=/`);
+    res.setHeader('Set-Cookie', `refreshToken=${refreshToken}; HttpOnly; Secure; SameSite=None; Max-Age=${rememberMe ? 30 * 24 * 3600 : 24 * 3600}; Path=/`);
     return res.json({ error: null, data: { token: accessToken }, name: user.name });
   }
 
@@ -237,7 +237,7 @@ module.exports = async function handler(req, res) {
 
       const accessToken = generateAccessToken(user);
       const refreshToken = generateRefreshToken(user, false);
-      res.setHeader('Set-Cookie', `refreshToken=${refreshToken}; HttpOnly; Secure; SameSite=Strict; Max-Age=${24 * 3600}; Path=/`);
+      res.setHeader('Set-Cookie', `refreshToken=${refreshToken}; HttpOnly; Secure; SameSite=None; Max-Age=${24 * 3600}; Path=/`);
 
       return res.json({ error: null, data: { token: accessToken, user: { id: user._id, name: user.name, email: user.email, avatar: user.avatar } } });
     } catch (e) {
@@ -271,7 +271,7 @@ module.exports = async function handler(req, res) {
 
       const accessToken = generateAccessToken(user);
       const refreshToken = generateRefreshToken(user, false);
-      res.setHeader('Set-Cookie', `refreshToken=${refreshToken}; HttpOnly; Secure; SameSite=Strict; Max-Age=${24 * 3600}; Path=/`);
+      res.setHeader('Set-Cookie', `refreshToken=${refreshToken}; HttpOnly; Secure; SameSite=None; Max-Age=${24 * 3600}; Path=/`);
 
       return res.json({ error: null, data: { token: accessToken, user: { id: user._id, name: user.name, email: user.email, avatar: user.avatar } } });
     } catch (e) {
