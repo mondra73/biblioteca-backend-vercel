@@ -9,25 +9,32 @@
     { "source": "/api/admin/estadisticas-series", "destination": "/api/admin/estadisticas" },
     { "source": "/api/admin/movimiento", "destination": "/api/admin/movimiento" },
     { "source": "/api/admin/user/estadisticas", "destination": "/api/admin/estadisticas" },
+    { "source": "/api/admin/user/estadisticas-libros/:id", "destination": "/api/admin/estadisticas" },
+    { "source": "/api/admin/user/estadisticas-peliculas/:id", "destination": "/api/admin/estadisticas" },
+    { "source": "/api/admin/user/estadisticas-series/:id", "destination": "/api/admin/estadisticas" },
     { "source": "/api/admin/user/estadisticas-user", "destination": "/api/admin/user/estadisticas-user" },
 
     { "source": "/api/admin/user/libros", "destination": "/api/admin/user/libros" },
     { "source": "/api/admin/user/libro/buscar", "destination": "/api/admin/user/libros" },
+    { "source": "/api/admin/user/libro/:id", "destination": "/api/admin/user/libros" },
     { "source": "/api/admin/user/libro", "destination": "/api/admin/user/libros" },
     { "source": "/api/admin/user/carga-libros", "destination": "/api/admin/user/libros" },
 
     { "source": "/api/admin/user/series", "destination": "/api/admin/user/series" },
     { "source": "/api/admin/user/serie/buscar", "destination": "/api/admin/user/series" },
+    { "source": "/api/admin/user/serie/:id", "destination": "/api/admin/user/series" },
     { "source": "/api/admin/user/serie", "destination": "/api/admin/user/series" },
     { "source": "/api/admin/user/carga-series", "destination": "/api/admin/user/series" },
 
     { "source": "/api/admin/user/peliculas", "destination": "/api/admin/user/peliculas" },
     { "source": "/api/admin/user/pelicula/buscar", "destination": "/api/admin/user/peliculas" },
+    { "source": "/api/admin/user/pelicula/:id", "destination": "/api/admin/user/peliculas" },
     { "source": "/api/admin/user/pelicula", "destination": "/api/admin/user/peliculas" },
     { "source": "/api/admin/user/carga-peliculas", "destination": "/api/admin/user/peliculas" },
 
     { "source": "/api/admin/user/pendientes", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/pendiente/buscar", "destination": "/api/admin/user/pendientes" },
+    { "source": "/api/admin/user/pendiente/:id", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/pendiente", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/carga-pendientes", "destination": "/api/admin/user/pendientes" },
 
