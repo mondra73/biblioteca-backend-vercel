@@ -16,14 +16,6 @@ const schemaCargaLibros = Joi.object({
 
 const PAGE_SIZE = 20;
 
-// Rutas manejadas:
-// GET    /api/admin/user/libros
-// GET    /api/admin/user/libro?id=:libroId
-// GET    /api/admin/user/libro/buscar?texto=:texto&page=:page
-// POST   /api/admin/user/carga-libros
-// DELETE /api/admin/user/libro?id=:libroId
-// PUT    /api/admin/user/libro?id=:libroId
-
 module.exports = async function handler(req, res) {
   if (handleCors(req, res)) return;
   await connectDB();
@@ -33,7 +25,6 @@ module.exports = async function handler(req, res) {
 
   const rawUrl = req.url.replace(/^\/api\/admin\/user\/?/, '');
   const urlPath = rawUrl.split('?')[0];
-  const page = parseInt(pageParam) || 1;
   const method = req.method;
 
   const pathIdMatch = urlPath.match(/^(libro|serie|pelicula|pendiente)\/([a-f0-9]{24})$/i);
@@ -42,6 +33,7 @@ module.exports = async function handler(req, res) {
 
   const { id: idFromQuery, texto, page: pageParam } = req.query;
   const id = idFromQuery || idFromPath;
+  const page = parseInt(pageParam) || 1;
 
   // ── GET /api/admin/user/libros ──────────────────────────────────────────
   if (url === 'libros' && method === 'GET') {

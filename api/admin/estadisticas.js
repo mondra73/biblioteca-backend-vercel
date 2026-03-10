@@ -2,12 +2,6 @@ const connectDB = require('../../lib/db');
 const { handleCors } = require('../../lib/cors');
 const User = require('../../models/User');
 
-// Rutas manejadas (todas sin auth, son públicas según el original):
-// GET /api/admin/estadisticas
-// GET /api/admin/estadisticas-libros?id=:idUsuario
-// GET /api/admin/estadisticas-peliculas?id=:idUsuario
-// GET /api/admin/estadisticas-series?id=:idUsuario
-
 module.exports = async function handler(req, res) {
   if (handleCors(req, res)) return;
   await connectDB();
