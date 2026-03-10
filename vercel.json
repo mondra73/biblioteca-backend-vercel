@@ -19,24 +19,28 @@
     { "source": "/api/admin/user/libro/:id", "destination": "/api/admin/user/libros" },
     { "source": "/api/admin/user/libro", "destination": "/api/admin/user/libros" },
     { "source": "/api/admin/user/carga-libros", "destination": "/api/admin/user/libros" },
+    { "source": "/api/admin/user/libro/buscar/:texto", "destination": "/api/admin/user/libros" },
 
     { "source": "/api/admin/user/series", "destination": "/api/admin/user/series" },
     { "source": "/api/admin/user/serie/buscar", "destination": "/api/admin/user/series" },
     { "source": "/api/admin/user/serie/:id", "destination": "/api/admin/user/series" },
     { "source": "/api/admin/user/serie", "destination": "/api/admin/user/series" },
     { "source": "/api/admin/user/carga-series", "destination": "/api/admin/user/series" },
+    { "source": "/api/admin/user/serie/buscar/:texto", "destination": "/api/admin/user/series" },
 
     { "source": "/api/admin/user/peliculas", "destination": "/api/admin/user/peliculas" },
     { "source": "/api/admin/user/pelicula/buscar", "destination": "/api/admin/user/peliculas" },
     { "source": "/api/admin/user/pelicula/:id", "destination": "/api/admin/user/peliculas" },
     { "source": "/api/admin/user/pelicula", "destination": "/api/admin/user/peliculas" },
     { "source": "/api/admin/user/carga-peliculas", "destination": "/api/admin/user/peliculas" },
+    { "source": "/api/admin/user/pelicula/buscar/:texto", "destination": "/api/admin/user/peliculas" },
 
     { "source": "/api/admin/user/pendientes", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/pendiente/buscar", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/pendiente/:id", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/pendiente", "destination": "/api/admin/user/pendientes" },
     { "source": "/api/admin/user/carga-pendientes", "destination": "/api/admin/user/pendientes" },
+    { "source": "/api/admin/user/pendiente/buscar/:texto", "destination": "/api/admin/user/pendientes" },
 
     { "source": "/api/admin", "destination": "/api/admin/index" }
   ]

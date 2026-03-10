@@ -28,11 +28,15 @@ module.exports = async function handler(req, res) {
   const method = req.method;
 
   const pathIdMatch = urlPath.match(/^(libro|serie|pelicula|pendiente)\/([a-f0-9]{24})$/i);
-  const url = pathIdMatch ? pathIdMatch[1] : urlPath;
-  const idFromPath = pathIdMatch ? pathIdMatch[2] : null;
+  const pathBuscarMatch = urlPath.match(/^(libro|serie|pelicula|pendiente)\/buscar\/(.+)$/i);
 
-  const { id: idFromQuery, texto, page: pageParam } = req.query;
+  const url = pathIdMatch ? pathIdMatch[1] : pathBuscarMatch ? `${pathBuscarMatch[1]}/buscar` : urlPath;
+  const idFromPath = pathIdMatch ? pathIdMatch[2] : null;
+  const textoFromPath = pathBuscarMatch ? decodeURIComponent(pathBuscarMatch[2]) : null;
+
+  const { id: idFromQuery, texto: textoFromQuery, page: pageParam } = req.query;
   const id = idFromQuery || idFromPath;
+  const texto = textoFromQuery || textoFromPath;
   const page = parseInt(pageParam) || 1;
 
   // ── GET /api/admin/user/libros ──────────────────────────────────────────
