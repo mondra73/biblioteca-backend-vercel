@@ -23,7 +23,7 @@ if (!admin.apps.length) {
 
 // ── Helpers JWT ────────────────────────────────────────────────────────────
 const generateAccessToken = (user) =>
-  jwt.sign({ id: user._id, name: user.name }, process.env.TOKEN_SECRET, { expiresIn: '15m' });
+  jwt.sign({ id: user._id, name: user.name }, process.env.TOKEN_SECRET, { expiresIn: '2h' });
 
 const generateRefreshToken = (user, rememberMe) =>
   jwt.sign({ id: user._id }, process.env.REFRESH_SECRET, {
