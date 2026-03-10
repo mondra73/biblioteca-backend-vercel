@@ -22,8 +22,16 @@ module.exports = async function handler(req, res) {
   const ok = await verifyToken(req, res);
   if (!ok) return;
 
-  const url = req.url.replace(/^\/api\/admin\/user\/?/, '').split('?')[0];
-  const { id, texto, page: pageParam } = req.query;
+  const rawUrl = req.url.replace(/^\/api\/admin\/user\/?/, '');
+  const urlPath = rawUrl.split('?')[0];
+
+  const pathIdMatch = urlPath.match(/^(libro|serie|pelicula|pendiente)\/([a-f0-9]{24})$/i);
+  const url = pathIdMatch ? pathIdMatch[1] : urlPath;
+  const idFromPath = pathIdMatch ? pathIdMatch[2] : null;
+
+  const { id: idFromQuery, texto, page: pageParam } = req.query;
+  const id = idFromQuery || idFromPath;
+
   const page = parseInt(pageParam) || 1;
   const method = req.method;
 

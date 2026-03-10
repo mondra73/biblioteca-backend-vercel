@@ -12,8 +12,15 @@ module.exports = async function handler(req, res) {
   if (handleCors(req, res)) return;
   await connectDB();
 
-  const url = req.url.replace(/^\/api\/admin\/?/, '').split('?')[0];
-  const { id: idUsuario } = req.query;
+  const rawUrl = req.url.replace(/^\/api\/admin\/?/, '');
+  const urlPath = rawUrl.split('?')[0];
+
+  const pathIdMatch = urlPath.match(/^(?:user\/)?(estadisticas-libros|estadisticas-peliculas|estadisticas-series)\/([a-f0-9]{24})$/i);
+  const url = pathIdMatch ? pathIdMatch[1] : urlPath;
+  const idFromPath = pathIdMatch ? pathIdMatch[2] : null;
+
+  const { id: idFromQuery } = req.query;
+  const idUsuario = idFromQuery || idFromPath;
 
   // ── GET /api/admin/estadisticas ─────────────────────────────────────────
   if (url === 'estadisticas' && req.method === 'GET') {
